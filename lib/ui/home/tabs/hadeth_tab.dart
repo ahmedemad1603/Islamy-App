@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/model/hadeth_model.dart';
+import 'package:islami_app/ui/home/tabs/hadeth_item.dart';
 
 class HadethTab extends StatefulWidget
 {
@@ -47,7 +48,7 @@ class _HadethTabState extends State<HadethTab> {
           flex: 2,
           child: ahadethList.isEmpty
               ? Center(child: CircularProgressIndicator(),)
-              :ListView.separated(itemBuilder: (context, index) => Text(ahadethList[index].hadethTitle),
+              :ListView.separated(itemBuilder: (context, index) => HadethItem(hadeth: ahadethList[index]),
               separatorBuilder: (context, index) => Divider(),
               itemCount: ahadethList.length
           ),
