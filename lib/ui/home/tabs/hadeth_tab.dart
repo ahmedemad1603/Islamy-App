@@ -31,18 +31,17 @@ class _HadethTabState extends State<HadethTab> {
             border: Border(
                 top: BorderSide(
                   width: 3,
-                  color: Theme.of(context).colorScheme.primary
+                  color: Theme.of(context).colorScheme.onPrimaryContainer
                 ),
                 bottom: BorderSide(
                     width: 3,
-                    color: Theme.of(context).colorScheme.primary
+                    color: Theme.of(context).colorScheme.onPrimaryContainer
                 )
             )
           ),
-          child: Text("Ahadeth", style: TextStyle(
-            fontSize: 25,
+          child: Text("Ahadeth", style: Theme.of(context).textTheme.displayMedium?.copyWith(
             fontWeight: FontWeight.w500
-          ),),
+          )),
         ),
         Expanded(
           flex: 2,
