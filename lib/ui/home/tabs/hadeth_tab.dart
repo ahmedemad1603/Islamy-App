@@ -43,7 +43,7 @@ class _HadethTabState extends State<HadethTab> {
           child: Text(
               AppLocalizations.of(context)!.ahadeth,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  fontWeight: FontWeight.w500
+                  fontWeight: FontWeight.bold
               )
           ),
         ),

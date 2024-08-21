@@ -7,5 +7,8 @@
   "radio" : "Radio",
   "settings" : "Settings",
   "language" : "Language",
-  "mode" : "Light Mode"
+  "mode" : "Light Mode",
+  "dark" : "Dark",
+  "light" : "Light",
+  "tasbeeh" : "Tasbeeh Counter"
 }

@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: Icon(
                       Icons.settings
                   ),
-                  label: "Settings"
+                  label: AppLocalizations.of(context)!.settings
               )
             ]
         ),

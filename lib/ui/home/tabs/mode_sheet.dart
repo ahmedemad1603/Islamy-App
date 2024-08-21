@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/settings_provider.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'selected_item.dart';
 import 'unselected_item.dart';
 
@@ -20,8 +20,8 @@ class ModeSheet extends StatelessWidget
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SelectedItem(value: provider.themeMode == ThemeMode.light
-              ? "Light"
-              : "Dark"
+              ? AppLocalizations.of(context)!.light
+              : AppLocalizations.of(context)!.dark
           ),
           SizedBox(height: 20,),
           InkWell(
@@ -32,8 +32,8 @@ class ModeSheet extends StatelessWidget
                 );
               },
               child: UnselectedItem(value: provider.themeMode == ThemeMode.light
-                  ? "Dark"
-                  : "Light"
+                  ? AppLocalizations.of(context)!.dark
+                  : AppLocalizations.of(context)!.light
               )
           )
         ],

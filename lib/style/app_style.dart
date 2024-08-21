@@ -6,11 +6,14 @@ class AppStyle
   static const Color darkPrimaryColor = Color(0xff141A2E);
   static const Color darkSecondaryColor = Color(0xffFACC1D);
 
-
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     useMaterial3: true,
     textTheme: TextTheme(
+        titleSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w700
+        ),
         displayMedium: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.w400
@@ -29,6 +32,16 @@ class AppStyle
           fontWeight: FontWeight.bold,
           fontSize: 20,
           color: Colors.black
+        ),
+        displaySmall: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            color: Colors.black
+        ),
+        displayLarge: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            color: Colors.white
         )
     ),
     appBarTheme: AppBarTheme(
@@ -65,6 +78,7 @@ class AppStyle
         primary: lightPrimaryColor,
         onPrimary: Colors.white,
         secondary: lightPrimaryColor.withOpacity(0.57),
+        onTertiary: lightPrimaryColor.withOpacity(0.57),
         onSecondary: Colors.black,
         onPrimaryContainer: lightPrimaryColor,
         onSecondaryContainer: Colors.white
@@ -99,6 +113,11 @@ class AppStyle
         thickness: 3,
       ),
       textTheme: TextTheme(
+          titleSmall: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: Colors.white
+          ),
           displayMedium: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.w600,
@@ -118,6 +137,16 @@ class AppStyle
               fontWeight: FontWeight.bold,
               fontSize: 20,
               color: Colors.white
+          ),
+          displaySmall: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            color: Colors.white
+          ),
+          displayLarge: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 25,
+              color: Colors.black
           )
       ),
       cardTheme: const CardTheme(
@@ -130,7 +159,8 @@ class AppStyle
         primary: darkPrimaryColor,
         secondary: darkSecondaryColor,
         onPrimaryContainer: darkSecondaryColor,
-        onSecondaryContainer: darkPrimaryColor
+        onSecondaryContainer: darkPrimaryColor,
+        onTertiary: darkPrimaryColor
     )
   );
 }

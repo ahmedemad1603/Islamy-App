@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget
 {
@@ -33,7 +34,10 @@ class _SebhaTabState extends State<SebhaTab>
         Stack(
           alignment: Alignment.topCenter,
           children: [
-            Image.asset("assets/images/sebha_head.png"),
+            Image.asset(
+                "assets/images/sebha_head.png",
+                color: Theme.of(context).colorScheme.onPrimaryContainer
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 38.0),
               child: Transform.rotate(
@@ -42,17 +46,28 @@ class _SebhaTabState extends State<SebhaTab>
                     onTap: (){
                       onPress();
                     },
-                    child: Image.asset("assets/images/sebha_body.png")
+                    child: Image.asset(
+                        "assets/images/sebha_body.png",
+                        color: Theme.of(context).colorScheme.onPrimaryContainer
+                    )
                 ),
               ),
             ),
           ],
         ),
-        Text("عدد التسبيحات",
+        Text(AppLocalizations.of(context)!.tasbeeh,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w600
+          style: Theme.of(context).textTheme.displayMedium
+        ),
+        SizedBox(height: 22,),
+        Center(
+          child: Container(
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.onTertiary,
+              borderRadius: BorderRadius.circular(25)
+            ),
+            child: Text("$counter", style: Theme.of(context).textTheme.displaySmall),
           ),
         ),
         SizedBox(height: 22,),
@@ -60,28 +75,10 @@ class _SebhaTabState extends State<SebhaTab>
           child: Container(
             padding: EdgeInsets.all(15),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.onPrimaryContainer,
               borderRadius: BorderRadius.circular(25)
             ),
-            child: Text("$counter", style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w400
-            ),),
-          ),
-        ),
-        SizedBox(height: 22,),
-        Center(
-          child: Container(
-            padding: EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
-              borderRadius: BorderRadius.circular(25)
-            ),
-            child: Text("${azkar[index]}", style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w400,
-              color: Colors.white
-            ),),
+            child: Text("${azkar[index]}", style: Theme.of(context).textTheme.displayLarge),
           ),
         ),
 

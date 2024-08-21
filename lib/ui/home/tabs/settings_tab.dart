@@ -3,6 +3,7 @@ import 'package:islami_app/ui/home/tabs/language_sheet.dart';
 import 'package:islami_app/ui/home/tabs/mode_sheet.dart';
 import 'package:islami_app/ui/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTab extends StatefulWidget
 {
@@ -23,10 +24,7 @@ class _SettingsTabState extends State<SettingsTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 20,),
-          Text("Language", style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w700
-          ),),
+          Text(AppLocalizations.of(context)!.language, style: Theme.of(context).textTheme.titleSmall),
           SizedBox(height: 17,),
           InkWell(
             onTap: (){
@@ -60,10 +58,7 @@ class _SettingsTabState extends State<SettingsTab> {
             ),
           ),
           SizedBox(height: 30,),
-          Text("Mode", style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w700
-          ),),
+          Text(AppLocalizations.of(context)!.mode, style: Theme.of(context).textTheme.titleSmall),
           SizedBox(height: 17,),
           InkWell(
             onTap: (){
@@ -83,8 +78,8 @@ class _SettingsTabState extends State<SettingsTab> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(provider.themeMode == ThemeMode.light
-                      ? "Light"
-                      : "Dark"
+                      ? AppLocalizations.of(context)!.light
+                      : AppLocalizations.of(context)!.dark
                     , style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w400
