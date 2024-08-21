@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/model/hadeth_model.dart';
 
+import '../../style/app_style.dart';
+
 class HadethContentScreen extends StatelessWidget
 {
   static const String routeName = "HadethContentScreen";
@@ -14,7 +16,10 @@ class HadethContentScreen extends StatelessWidget
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/background.png"),
+              image: AssetImage( AppStyle.isDark
+                  ?"assets/images/dark_background.png"
+                  :"assets/images/background.png"
+              ),
               fit: BoxFit.fill
           )
       ),
@@ -31,9 +36,7 @@ class HadethContentScreen extends StatelessWidget
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SingleChildScrollView(
-                    child: Text(args.hadethContent, style: TextStyle(
-                      fontSize: 20
-                    ),
+                    child: Text(args.hadethContent, style: Theme.of(context).textTheme.bodySmall,
                     textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,),
                   ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/ui/sura_content/sura_content_item.dart';
 
+import '../../style/app_style.dart';
+
 class SuraContentScreen extends StatefulWidget
 {
   static const String routeName = "SuraContent";
@@ -24,7 +26,10 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/background.png"),
+              image: AssetImage( AppStyle.isDark
+                  ?"assets/images/dark_background.png"
+                  :"assets/images/background.png"
+              ),
               fit: BoxFit.fill
           )
       ),
