@@ -1,16 +1,7 @@
-# islami_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Islamy Flutter Application is my first flutter project. I have applied multiple feature in this app. Some of these features are:
+--> Quran Tab: containing all the Quran suras and their verses numbers, when you click on the SuraName, you will be able to read its content.
+--> Hadeth Tab: containing about 50 different Prophet's ahadeth, when you click on the hadeth, you will be able to read its content.
+--> Sebha Tab: containing a Sebha which is used to say azkars.
+--> Radio Tab: ...
+--> Settings Tab: A tab where you can change the theme of the whole application between dark and light mode, and you can change the language of the application between arabic and english.
+--> Made two different designs one for dark theme and other for light theme.
