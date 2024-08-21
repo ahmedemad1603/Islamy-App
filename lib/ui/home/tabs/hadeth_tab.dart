@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/model/hadeth_model.dart';
+import 'package:islami_app/ui/home/tabs/hadeth_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethTab extends StatefulWidget
 {
@@ -30,24 +32,26 @@ class _HadethTabState extends State<HadethTab> {
             border: Border(
                 top: BorderSide(
                   width: 3,
-                  color: Theme.of(context).colorScheme.primary
+                  color: Theme.of(context).colorScheme.onPrimaryContainer
                 ),
                 bottom: BorderSide(
                     width: 3,
-                    color: Theme.of(context).colorScheme.primary
+                    color: Theme.of(context).colorScheme.onPrimaryContainer
                 )
             )
           ),
-          child: Text("Ahadeth", style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w500
-          ),),
+          child: Text(
+              AppLocalizations.of(context)!.ahadeth,
+              style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                  fontWeight: FontWeight.bold
+              )
+          ),
         ),
         Expanded(
           flex: 2,
           child: ahadethList.isEmpty
               ? Center(child: CircularProgressIndicator(),)
-              :ListView.separated(itemBuilder: (context, index) => Text(ahadethList[index].hadethTitle),
+              :ListView.separated(itemBuilder: (context, index) => HadethItem(hadeth: ahadethList[index]),
               separatorBuilder: (context, index) => Divider(),
               itemCount: ahadethList.length
           ),
