@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/tabs/language_sheet.dart';
 import 'package:islami_app/ui/home/tabs/mode_sheet.dart';
+import 'package:islami_app/ui/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SettingsTab extends StatefulWidget
 {
@@ -14,6 +16,7 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context)
   {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(38.0),
       child: Column(
@@ -42,7 +45,9 @@ class _SettingsTabState extends State<SettingsTab> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("English", style: TextStyle(
+                    Text(provider.selectedLanguage == "en"
+                        ? "English"
+                        : "العربية", style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w400
                     ),),
@@ -77,7 +82,10 @@ class _SettingsTabState extends State<SettingsTab> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Light", style: TextStyle(
+                  Text(provider.themeMode == ThemeMode.light
+                      ? "Light"
+                      : "Dark"
+                    , style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w400
                   ),),
